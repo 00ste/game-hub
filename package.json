@@ -1,0 +1,12 @@
+{
+    "name": "game-hub",
+    "version": "0.0.1",
+    "description": "A web-server that hosts various multiplayer games.",
+    "type": "module",
+    "dependencies": {
+        "express": "^4.19.2",
+        "express-session": "^1.18.1",
+        "pug": "^3.0.3",
+        "socket.io": "^4.7.5"
+    }
+}

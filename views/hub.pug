@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Game Hub
+  body
+    h1 Welcome to Game Hub!
+    button#button-create-room(onclick='location.href=\'/create_room\'') Create room
+    br
+    input#input-text-enter-code(type='text')
+    button#button-enter-room(onclick='enter_room()') Enter room
+
+    script(src='/socket.io/socket.io.js')
+    script.
+      const socket = io();
+
+      function create_room() {
+        console.log("Create room clicked!");
+        socket.emit("", {"user": user, "position": square_id});
+      }
+      
+      function enter_room() {
+        const input_text_enter_code = document.getElementById("input-text-enter-code");
+        console.log("Enter room with id [" + input_text_enter_code.value + "]!");
+        location.href='/room_' + input_text_enter_code.value;
+      }
+
